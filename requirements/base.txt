@@ -25,4 +25,3 @@ social-auth-core==1.5.0
 sorl-thumbnail==12.3
 urllib3==1.22
 wrapt==1.10.11
-git+https://github.com/doingandlearning/social.git
