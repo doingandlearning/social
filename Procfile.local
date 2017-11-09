@@ -1,0 +1,2 @@
+web: gunicorn social.wsgi:application
+export DJANGO_SETTINGS_MODULE=settings.dev
