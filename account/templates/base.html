@@ -46,6 +46,7 @@
     <script src=" http://cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js "></script>
     <script>
         var csrftoken = $.cookie('csrftoken');
+        console.log(csrftoken)
         function csrfSafeMethod(method) {
             // these HTTP methods do not require CSRF protection
             return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
