@@ -11,7 +11,7 @@
                 <img src="{{ im.url }}">
             {% endthumbnail %}
             {% else %}
-                <img src="{% static '/images/no-profile.png' %}"
+                <img src="{% static '/images/no-profile.png' %}">
             {% endif %}
     </div>
     {% with total_followers=user.followers.count %}

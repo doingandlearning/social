@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block title %}{{ image.title }}{% endblock %}
-
+{% load thumbnail %}
 {% block content %}
     <h1>{{ image.title }}</h1>
     {% load thumbnail %}
@@ -13,8 +13,8 @@
     {% with total_likes=image.users_like.count users_like=image.users_like.all %}
         <div class="image-info">
                 <div>
-                    <span class="count">
-                        <span class="total">{{ total_likes }}</span>
+                    <span class="count" >
+                        <span class="total" id="likes">{{ total_likes }}</span>
                         like{{ total_likes|pluralize }}
                     </span>
                     <span class="count">
@@ -35,11 +35,13 @@
         <div class="image-likes">
             {% for user in image.users_like.all %}
                 <div>
-                    {% if user.profile.image.url %}
-                    <img src="{{ user.profile.image.url }}">
-                    {% else $}
-                    <img src="{% static 'images/no-profile.png' %}">
-                    {% endif %}
+                        {% if user.profile.photo %}
+                        {% thumbnail user.profile.photo "180x180" crop="100%" as im %}
+                            <img src="{{ im.url }}">
+                        {% endthumbnail %}
+                        {% else %}
+                            <img src="{% static '/images/no-profile.png' %}">
+                        {% endif %}
                     <p>{{ user.first_name }}</p>
                 </div>
             {% empty %}
@@ -68,8 +70,8 @@
                     $('a.like').text(previous_action == 'like' ? 'Unlike' : 'Like');
 
                     // update total likes
-                    var previous_likes = parseInt($('span.count .total').text());
-                    $('span.count .total').text(previous_action == 'like' ? previous_likes + 1 : previous_likes - 1);
+                    var previous_likes = parseInt($('span.count #likes').text());
+                    $('span.count #likes').text(previous_action == 'like' ? previous_likes + 1 : previous_likes - 1);
                 }
         });
 

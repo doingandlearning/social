@@ -9,9 +9,8 @@ A photo bookmarking social site
 
 # To do
 - Tidy up some of the display
-- Get the people list to display profile pics (and back up)
 - Fix the error with the counter on the like/views when clicking the like button multiple times
-- Deploy on heroku or digital ocean
+- Deploy
 
 # What have I learnt?
 - More experience using AJAX and incorporating JS into templates
