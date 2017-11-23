@@ -18,6 +18,7 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from account.views import dashboard
+from django.views.generic.simple import direct_to_template
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,6 +26,8 @@ urlpatterns = [
     url('', include('social_django.urls', namespace='soc')),
     url(r'^images/', include('images.urls', namespace='images')),
     url(r'^$', dashboard, name='dashboard'),
+     (r'^robots\.txt$', direct_to_template,
+     {'template': 'robots.txt', 'mimetype': 'text/plain'}),
 ]
 
 if settings.DEBUG:
