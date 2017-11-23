@@ -1,7 +1,7 @@
 (function() {
     var jquery_version = '2.1.4';
-    var site_url = 'social-photo-bookmarking.herokuapp.com';
-    var static_url = site_url + 'static/';
+
+  
     var min_width = 100;
     var min_height = 100;
 
@@ -11,7 +11,7 @@
         css.attr({
             rel: 'stylesheet',
             type: 'text/css',
-            href: static_url + 'css/bookmarklet.css?r=' + Math.floor(Math.random() * 99999999999999999999)
+            href:  '/static/css/bookmarklet.css?r=' + Math.floor(Math.random() * 99999999999999999999)
         });
         jQuery('head').append(css);
 
