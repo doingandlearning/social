@@ -210,7 +210,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Redis server settings
 
-redis_url = urlparse(os.environ.get('REDIS_URL'))
+REDIS_HOST = urlparse(os.environ.get('REDIS_URL'))
 CACHES = {
     "default": {
          "BACKEND": "redis_cache.RedisCache",
