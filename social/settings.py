@@ -28,7 +28,7 @@ SECRET_KEY = 'enkpyb8pk9^gk8e%+kq35n0tta(k@!zzer*z=4z_8=z!dm%tfo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://kcshed.com', 'kcshed.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['http://kcshed.com', 'social-photo-bookmarking.herokuapp.com','kcshed.com', 'localhost', '127.0.0.1']
 ABSOLUTE_URL_OVERRIDES ={
     'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
 }
