@@ -10,12 +10,9 @@ from common.decorators import ajax_required
 from actions.utils import create_action
 import redis
 from django.conf import settings
+import os
 
-
-r = redis.StrictRedis(host=settings.REDIS_HOST.host,
-                      port=settings.REDIS_HOST.port,
-                      db=settings.REDIS_HOST.db)
-
+r = redis.from_url(os.environ.get("REDIS_URL"))
 
 @login_required
 def image_create(request):
