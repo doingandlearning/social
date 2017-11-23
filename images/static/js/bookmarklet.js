@@ -11,7 +11,7 @@
         css.attr({
             rel: 'stylesheet',
             type: 'text/css',
-            href:  '/static/css/bookmarklet.css?r=' + Math.floor(Math.random() * 99999999999999999999)
+            href:  'https://social-photo-bookmarking.herokuapp.com/static/css/bookmarklet.css?r=' + Math.floor(Math.random() * 99999999999999999999)
         });
         jQuery('head').append(css);
 
@@ -38,7 +38,7 @@
             // hide bookmarklet
             jQuery('#bookmarklet').hide();
             // open new window to submit the image
-            window.open(site_url + 'images/create/?url=' +
+            window.open('https://social-photo-bookmarking.herokuapp.com/images/create/?url=' +
                 encodeURIComponent(selected_image) +
                 '&title=' + encodeURIComponent(jQuery('title').text()),
                 '_blank');
