@@ -209,15 +209,6 @@ LOGOUT_URL = reverse_lazy('logout')
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Redis server settings
-
-REDIS_HOST = urlparse(os.environ.get('REDIS_URL'))
-CACHES = {
-    "default": {
-         "BACKEND": "redis_cache.RedisCache",
-         "LOCATION": "{0}:{1}".format(redis_url.hostname, redis_url.port),
-         "OPTIONS": {
-             "PASSWORD": REDIS_HOST.password,
-             "DB": 0,
-         }
-    }
-}
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
