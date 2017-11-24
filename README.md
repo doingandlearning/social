@@ -9,8 +9,7 @@ A photo bookmarking social site
 
 # To do
 - Tidy up some of the display
-- Fix the error with the counter on the like/views when clicking the like button multiple times
-- Deploy
+- Title should be gained from the alt-text tag
 
 # What have I learnt?
 - More experience using AJAX and incorporating JS into templates

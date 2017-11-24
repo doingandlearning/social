@@ -35,12 +35,17 @@
         // when an image is selected open URL with it
         jQuery('#bookmarklet .images a').click(function(e) {
             selected_image = jQuery(this).children('img').attr('src');
+            if (jQuery(this).children('img').attr('alt-text')){
+                image_alt = jQuery(this).children('img').attr('alt-text');
+            }else{
+                image_alt = jQuery('title').text();
+            }
             // hide bookmarklet
             jQuery('#bookmarklet').hide();
             // open new window to submit the image
             window.open('https://social-photo-bookmarking.herokuapp.com/images/create/?url=' +
                 encodeURIComponent(selected_image) +
-                '&title=' + encodeURIComponent(jQuery('title').text()),
+                '&title=' + encodeURIComponent(image_alt),
                 '_blank');
         });
 
